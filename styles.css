@@ -320,7 +320,7 @@ img{
     flex-direction: column;
 }
 
-.main-content p, .main-content label{
+.main-content p, .main-content .label2{
     color: #a3a3a3;
 }
 

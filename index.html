@@ -175,29 +175,29 @@
                         <div class="trending-row one">
                             <img src="./prof-pics/monkey.jpg">
                             <div class="prof-info">
-                                <label>@tegan</label>
-                                <label>Super Cool Project</label>
+                                <label class="lbl1">@tegan</label>
+                                <label class="label2">Super Cool Project</label>
                             </div>
                         </div>
                         <div class="trending-row two">
                             <img src="./prof-pics/bird.jpg">
                             <div class="prof-info">
-                                <label>@wandar</label>
-                                <label>Plant Discovery</label>
+                                <label class="lbl1">@wandar</label>
+                                <label class="label2">Plant Discovery</label>
                             </div>
                         </div>
                         <div class="trending-row three">
                             <img src="./prof-pics/gees.jpg">
                             <div class="prof-info">
-                                <label>@ravini</label>
-                                <label>Calculator</label>
+                                <label  class="lbl1">@ravini</label>
+                                <label class="label2">Calculator</label>
                             </div>
                         </div>
                         <div class="trending-row four">
                             <img src="./prof-pics/squirrel.jpg">
                             <div class="prof-info">
-                                <label>@stephanie</label>
-                                <label>Etch-a-sketch</label>
+                                <label class="lbl1">@stephanie</label>
+                                <label class="label2">Etch-a-sketch</label>
                             </div>
                         </div>
                     </div>
@@ -205,5 +205,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        var count = 0;
+        document.getElementsByClassName("save").addEventListner("click", display_icon());
+
+        function display_icon(){
+            alert("12345678");
+            count++;
+
+            if(count%2 == 1){
+                this.style.backgroundImage='url(./icons/star-plus-outline-saved.svg)';
+            }else{
+                this.style.backgroundImage='url(./icons/star-plus-outline.svg)';
+            }
+        }
+    </script>
 </body>
 </html>
