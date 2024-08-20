@@ -98,54 +98,54 @@
                             <h4>Etch-a-sketch</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                             <div class="actions">
-                                <button class="save"></button>
-                                <button class="view"><a href="https://rmahawewa.github.io/etch-a-sketch/"></a></button>
-                                <button class="fork"><a href="https://github.com/rmahawewa/etch-a-sketch"></a></button>
+                                <button class="save" state="0"></button>
+                                <a href="https://rmahawewa.github.io/etch-a-sketch/" target="_blank"><button class="view"></button></a>
+                                <a href="https://github.com/rmahawewa/etch-a-sketch" target="_blank"><button class="fork"></button></a>
                             </div>
                         </div>
                         <div class="card">
                             <h4>Recipies</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                             <div class="actions">
-                                <button class="save"></button>
-                                <button class="view"><a href="https://rmahawewa.github.io/odin-recipes/"></a></button>
-                                <button class="fork"><a href="https://github.com/rmahawewa/odin-recipes"></a></button>
+                                <button class="save" state="0"></button>
+                                <a href="https://rmahawewa.github.io/odin-recipes/" target="_blank"><button class="view"></button></a>
+                                <a href="https://github.com/rmahawewa/odin-recipes" target="_blank"><button class="fork"></button></a>
                             </div>
                         </div>
                         <div class="card">
                             <h4>Calculator</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                             <div class="actions">
-                                <button class="save"></button>
-                                <button class="view"><a href="https://rmahawewa.github.io/foundations_calculator/"></a></button>
-                                <button class="fork"><a href="https://github.com/rmahawewa/foundations_calculator"></a></button>
+                                <button class="save" state="0"></button>
+                                <a href="https://rmahawewa.github.io/foundations_calculator/" target="_blank"><button class="view"></button></a>
+                                <a href="https://github.com/rmahawewa/foundations_calculator" target="_blank"><button class="fork"></button></a>
                             </div>
                         </div>
                         <div class="card">
                             <h4>Landing page</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                             <div class="actions">
-                                <button class="save"></button>
-                                <button class="view"><a href="https://rmahawewa.github.io/stability/"></a></button>
-                                <button class="fork"><a href="https://github.com/rmahawewa/stability"></a></button>
+                                <button class="save" state="0"></button>
+                                <a href="https://rmahawewa.github.io/stability/" target="_blank"><button class="view"></button></a>
+                                <a href="https://github.com/rmahawewa/stability" target="_blank"><button class="fork"></button></a>
                             </div>
                         </div>
                         <div class="card">
                             <h4>Sign-up form</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                             <div class="actions">
-                                <button class="save"></button>
-                                <button class="view"><a href="https://rmahawewa.github.io/Sign-Up-Form/"></a></button>
-                                <button class="fork"><a href="https://github.com/rmahawewa/Sign-Up-Form"></a></button>
+                                <button class="save" state="0"></button>
+                                <a href="https://rmahawewa.github.io/Sign-Up-Form/" target="_blank"><button class="view"></button></a>
+                                <a href="https://github.com/rmahawewa/Sign-Up-Form" target="_blank"><button class="fork"></button></a>
                             </div>
                         </div>
                         <div class="card">
                             <h4>Rock Paper Scissors</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                             <div class="actions">
-                                <button class="save"></button>
-                                <button class="view"><a href="https://rmahawewa.github.io/rock-paper-scissors/"></a></button>
-                                <button class="fork"><a href="https://github.com/rmahawewa/rock-paper-scissors"></a></button>
+                                <button class="save" state="0"></button>
+                                <a href="https://rmahawewa.github.io/rock-paper-scissors/" target="_blank"><button class="view"></button></a>
+                                <a href="https://github.com/rmahawewa/rock-paper-scissors" target="_blank"><button class="fork"></button></a>
                             </div>
                         </div>
                     </div>
@@ -207,19 +207,21 @@
     </div>
 
     <script>
-        var count = 0;
-        document.getElementsByClassName("save").addEventListner("click", display_icon());
+        var btns_save = document.querySelectorAll(".save");
 
-        function display_icon(){
-            alert("12345678");
-            count++;
-
-            if(count%2 == 1){
-                this.style.backgroundImage='url(./icons/star-plus-outline-saved.svg)';
+        btns_save.forEach((btn_save) => 
+        btn_save.addEventListener("click", function() {
+            let value = btn_save.getAttribute("state");
+            if(Number(value) === 0){
+                this.setAttribute("state", "1");
+                this.style.background = "url(./icons/star-plus-outline-saved.svg)";
             }else{
-                this.style.backgroundImage='url(./icons/star-plus-outline.svg)';
-            }
-        }
+                this.setAttribute("state", "0");
+                this.style.background = "url(./icons/star-plus-outline.svg)";
+            }            
+        })
+    );
+        
     </script>
 </body>
 </html>
