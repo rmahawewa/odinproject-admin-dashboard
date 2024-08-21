@@ -227,6 +227,7 @@ img{
     justify-content: right;
     margin-right: 1rem;
     gap: 1.5rem;
+    align-items: center;
 }
 
 .save, .view, .fork{
@@ -331,4 +332,10 @@ img{
 .main-content h3{
     margin-top: 2rem;
     margin-bottom: 0.5rem;
+}
+
+.actions button:hover{
+    border: 2px solid #41590b;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
 }
